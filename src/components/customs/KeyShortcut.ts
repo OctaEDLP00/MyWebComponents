@@ -45,7 +45,7 @@ export class KeyShortcutElement extends HTMLElement {
     this.render()
   }
 
-  detectOS(): string {
+  detectOS(): OS {
     if (this.forceMac) return 'mac'
     const ua = navigator.userAgent.toLowerCase()
     if (/macintosh|mac os x/.test(ua)) return 'mac'
@@ -63,7 +63,8 @@ export class KeyShortcutElement extends HTMLElement {
     const raw = this.keys
     if (!raw) return ''
 
-    const sequences: Array<string> = raw.split(/\s+/)
+    const normalized = raw.replace(/\s*\+\s*/g, '+')
+    const sequences: Array<string> = normalized.split(/\s+/)
 
     return sequences
       .map(seq => {
@@ -93,7 +94,6 @@ export class KeyShortcutElement extends HTMLElement {
    * @param {string} key
    */
   normalizeKey(key: string): string {
-    console.log(key)
     const isMac = navigator.platform.includes('Mac')
     switch (key) {
       case 'Control':
@@ -115,17 +115,9 @@ export class KeyShortcutElement extends HTMLElement {
    * @param {KeyboardEvent} event
    */
   handleKeyDown = ({ key }: KeyboardEvent): void => {
-    console.log('key', key)
     const normalizeKey = this.normalizeKey(key)
     this.pressedKeys.add(normalizeKey)
     this.highlightKeys()
-
-    if (['Alt', 'Ctrl', 'Shift', '⌥', '⌘', 'Win'].includes(key)) {
-      setTimeout(() => {
-        this.pressedKeys.delete(key)
-        this.highlightKeys()
-      }, 150)
-    }
   }
 
   /**

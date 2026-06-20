@@ -19,9 +19,25 @@ import type {
   BadgeSuccessElement,
   PreviewIframeElement,
   KeyShortcutElement,
+  CustomSelectElement,
+  AvatarGroupElement,
+  CollapsibleAccordionElement,
+  CopyButtonElement,
+  ProgressRingElement,
+  ManagerToastElement,
+  CodeSnippetElement,
+  SegmentControlElement,
+  ComponentCatalogElement,
+  CatalogCardElement,
+  CatalogModalElement,
+  FloatingInputElement,
+  TimelineItemElement,
+  VisualDividerElement,
 } from './index.ts'
 
 declare global {
+  type OS = 'mac' | 'linux' | 'windows' | 'android' | 'ios' | 'unknown'
+
   type Size = 'sm' | 'md' | 'lg' | 'xl'
 
   type Variation = 'outline' | 'soft' | 'solid'
@@ -50,6 +66,21 @@ declare global {
     // customs
     PreviewIframeElement: typeof PreviewIframeElement
     KeyShortcutElement: typeof KeyShortcutElement
+    CustomSelectElement: typeof CustomSelectElement
+    AvatarGroupElement: typeof AvatarGroupElement
+    CollapsibleAccordionElement: typeof CollapsibleAccordionElement
+    CopyButtonElement: typeof CopyButtonElement
+    ProgressRingElement: typeof ProgressRingElement
+    ManagerToastElement: typeof ManagerToastElement
+    CodeSnippetElement: typeof CodeSnippetElement
+    SegmentControlElement: typeof SegmentControlElement
+    ComponentCatalogElement: typeof ComponentCatalogElement
+    CatalogCardElement: typeof CatalogCardElement
+    CatalogModalElement: typeof CatalogModalElement
+    //skeletons
+    FloatingInputElement: typeof FloatingInputElement
+    TimelineItemElement: typeof TimelineItemElement
+    VisualDividerElement: typeof VisualDividerElement
   }
 
   interface HTMLElementTagNameMap {
@@ -73,5 +104,22 @@ declare global {
     'badge-glass': BadgeGlassElement
     // customs
     'preview-iframe': PreviewIframeElement
+    'key-shortcut': KeyShortcutElement
+    'custom-select': CustomSelectElement
+    'avatar-group': AvatarGroupElement
+    'collapsible-accordion': CollapsibleAccordionElement
+    'copy-button': CopyButtonElement
+    'progress-ring': ProgressRingElement
+    'toast-manager': ManagerToastElement
+    'code-snippet': CodeSnippetElement
+    'segmented-control': SegmentControlElement
+    'component-catalog': ComponentCatalogElement
+    'component-catalog-card': CatalogCardElement
+    'component-catalog-modal': CatalogModalElement
+    'floating-input': FloatingInputElement
+    'timeline-item': TimelineItemElement
+    'visual-divider': VisualDividerElement
   }
 }
+
+export {}

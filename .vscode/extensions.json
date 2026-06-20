@@ -5,10 +5,11 @@
     "yoavbls.pretty-ts-errors",
     "christian-kohler.npm-intellisense",
     "wix.vscode-import-cost",
-		"pflannery.vscode-versionlens",
+    "pflannery.vscode-versionlens",
     "editorconfig.editorconfig",
     "usernamehw.errorlens",
     "christian-kohler.path-intellisense",
-		"tobermory.es6-string-html"
-	]
+    "tobermory.es6-string-html",
+    "bradlc.vscode-tailwindcss"
+  ]
 }

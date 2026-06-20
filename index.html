@@ -3,139 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Web Components</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Custom Web Components Catalog — Reusable UI Library</title>
+    <meta name="description" content="Explore and preview a collection of custom HTML web components built with vanilla Web Components API, TypeScript, and Vite." />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Custom Web Components Catalog" />
+    <meta property="og:description" content="A living catalog of reusable custom HTML elements built with vanilla Web Components." />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Custom Web Components Catalog" />
+    <meta name="twitter:description" content="A living catalog of reusable custom HTML elements." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Custom Web Components Catalog",
+      "description": "A living catalog of reusable custom HTML elements built with vanilla Web Components.",
+      "about": {
+        "@type": "Thing",
+        "name": "Web Components"
+      }
+    }
+    </script>
+
     <script type="module" src="/src/main.ts"></script>
   </head>
-  <body class="grid min-h-dvh w-screen grid-rows-[auto_1fr_auto]">
-    <nav class="flex h-24 items-center justify-around px-8 py-4">
-      <h1 class="text-3xl uppercase sm:text-5xl md:text-7xl">custom web components</h1>
-      <ul class="flex flex-col items-center justify-center space-x-4 md:flex-row">
-        <li>
-          <a href="https://github.com/OctaEDLP00/" target="_blank" title="Github">
-            <svg class="size-10" width="19" height="19" fill="currentColor" viewBox="0 0 19 19">
+  <body>
+    <!-- Skip link for keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+      <div class="header-inner">
+        <div class="logo" aria-label="Custom Web Components logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">cwc</span>
+          <span class="logo-bracket"> /&gt;</span>
+        </div>
+        <nav aria-label="Social links">
+          <a href="https://github.com/OctaEDLP00/" target="_blank" title="GitHub" aria-label="View source on GitHub">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
-                fill="#08060d"
                 fill-rule="evenodd"
-                d="M9.356 1.85C5.05 1.85 1.57 5.356 1.57 9.694a7.84 7.84 0 0 0 5.324 7.44c.387.079.528-.168.528-.376 0-.182-.013-.805-.013-1.454-2.165.467-2.616-.935-2.616-.935-.349-.91-.864-1.143-.864-1.143-.71-.48.051-.48.051-.48.787.051 1.2.805 1.2.805.695 1.194 1.817.857 2.268.649.064-.507.27-.857.49-1.052-1.728-.182-3.545-.857-3.545-3.87 0-.857.31-1.558.8-2.104-.078-.195-.349-1 .077-2.078 0 0 .657-.208 2.14.805a7.5 7.5 0 0 1 1.946-.26c.657 0 1.328.092 1.946.26 1.483-1.013 2.14-.805 2.14-.805.426 1.078.155 1.883.078 2.078.502.546.799 1.247.799 2.104 0 3.013-1.818 3.675-3.558 3.87.284.247.528.714.528 1.454 0 1.052-.012 1.896-.012 2.156 0 .208.142.455.528.377a7.84 7.84 0 0 0 5.324-7.441c.013-4.338-3.48-7.844-7.773-7.844"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.338c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"
                 clip-rule="evenodd"
               />
             </svg>
           </a>
-        </li>
-        <li>
-          <a href="https://x.com/CaroOcta00/" target="_blank" title="Twitter">
-            <svg class="size-10" width="19" height="19" fill="currentColor" viewBox="0 0 19 19">
+          <a href="https://x.com/CaroOcta00/" target="_blank" title="Twitter / X" aria-label="Follow on X (Twitter)">
+            <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path
-                fill="#08060d"
-                fill-rule="evenodd"
-                d="M1.893 1.98c.052.072 1.245 1.769 2.653 3.77l2.892 4.114c.183.261.333.48.333.486s-.068.089-.152.183l-.522.593-.765.867-3.597 4.087c-.375.426-.734.834-.798.905a1 1 0 0 0-.118.148c0 .01.236.017.664.017h.663l.729-.83c.4-.457.796-.906.879-.999a692 692 0 0 0 1.794-2.038c.034-.037.301-.34.594-.675l.551-.624.345-.392a7 7 0 0 1 .34-.374c.006 0 .93 1.306 2.052 2.903l2.084 2.965.045.063h2.275c1.87 0 2.273-.003 2.266-.021-.008-.02-1.098-1.572-3.894-5.547-2.013-2.862-2.28-3.246-2.273-3.266.008-.019.282-.332 2.085-2.38l2-2.274 1.567-1.782c.022-.028-.016-.03-.65-.03h-.674l-.3.342a871 871 0 0 1-1.782 2.025c-.067.075-.405.458-.75.852a100 100 0 0 1-.803.91c-.148.172-.299.344-.99 1.127-.304.343-.32.358-.345.327-.015-.019-.904-1.282-1.976-2.808L6.365 1.85H1.8zm1.782.91 8.078 11.294c.772 1.08 1.413 1.973 1.425 1.984.016.017.241.02 1.05.017l1.03-.004-2.694-3.766L7.796 5.75 5.722 2.852l-1.039-.004-1.039-.004z"
-                clip-rule="evenodd"
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
               />
             </svg>
           </a>
-        </li>
-      </ul>
-    </nav>
-    <main class="min-w-7xl px-8 py-4">
-      <div class="grid grid-cols-2 grid-rows-1">
-        <section class="flex flex-1 flex-col items-center space-y-4">
-          <h2 class="px-4 py-2 text-4xl uppercase">alerts markdown</h2>
-          <article class="grid w-full grid-cols-3 space-x-2">
-            <alert-note></alert-note>
-            <alert-important></alert-important>
-            <alert-tip></alert-tip>
-            <alert-warning></alert-warning>
-            <alert-caution></alert-caution>
-          </article>
-        </section>
-        <section class="flex flex-1 flex-col items-center space-y-4">
-          <h2 class="px-4 py-2 text-4xl uppercase">badges</h2>
-          <article class="flex w-full flex-wrap space-y-2 space-x-2">
-            <badge-warning></badge-warning>
-            <badge-warning variation="outline"></badge-warning>
-            <badge-warning variation="soft"></badge-warning>
-            <badge-warning variation="solid"></badge-warning>
-            <badge-info></badge-info>
-            <badge-info variation="outline"></badge-info>
-            <badge-info variation="soft"></badge-info>
-            <badge-info variation="solid"></badge-info>
-            <badge-error></badge-error>
-            <badge-error variation="outline"></badge-error>
-            <badge-error variation="soft"></badge-error>
-            <badge-error variation="solid"></badge-error>
-            <badge-success></badge-success>
-            <badge-success variation="outline"></badge-success>
-            <badge-success variation="soft"></badge-success>
-            <badge-success variation="solid"></badge-success>
-            <badge-deprecated></badge-deprecated>
-            <badge-deprecated variation="outline"></badge-deprecated>
-            <badge-deprecated variation="soft"></badge-deprecated>
-            <badge-deprecated variation="solid"></badge-deprecated>
-            <badge-experimental></badge-experimental>
-            <badge-experimental variation="outline"></badge-experimental>
-            <badge-experimental variation="soft"></badge-experimental>
-            <badge-experimental variation="solid"></badge-experimental>
-            <badge-beta></badge-beta>
-            <badge-beta variation="outline"></badge-beta>
-            <badge-beta variation="soft"></badge-beta>
-            <badge-beta variation="solid"></badge-beta>
-            <badge-alpha></badge-alpha>
-            <badge-alpha variation="outline"></badge-alpha>
-            <badge-alpha variation="soft"></badge-alpha>
-            <badge-alpha variation="solid"></badge-alpha>
-            <badge-new></badge-new>
-            <badge-new variation="outline"></badge-new>
-            <badge-new variation="soft"></badge-new>
-            <badge-new variation="solid"></badge-new>
-            <badge-danger></badge-danger>
-            <badge-danger variation="outline"></badge-danger>
-            <badge-danger variation="soft"></badge-danger>
-            <badge-danger variation="solid"></badge-danger>
-            <badge-glass></badge-glass>
-            <badge-custom>
-              <svg
-                slot="icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                slot="icon"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="m8.6 22.5-1.9-3.2-3.6-.8.35-3.7L1 12l2.45-2.8-.35-3.7 3.6-.8 1.9-3.2L12 2.95l3.4-1.45 1.9 3.2 3.6.8-.35 3.7L23 12l-2.45 2.8.35 3.7-3.6.8-1.9 3.2-3.4-1.45zm2.35-6.95L16.6 9.9l-1.4-1.45-4.25 4.25-2.15-2.1L7.4 12z"
-                />
-              </svg>
-              <p slot="text">Verified</p>
-            </badge-custom>
-          </article>
-        </section>
-        <section class="flex flex-1 flex-col items-center space-y-4">
-          <h2 class="px-4 py-2 text-4xl uppercase">Customs</h2>
-          <article class="m-auto flex w-screen flex-1 flex-wrap space-y-2 space-x-2">
-            <div class="flex flex-col">
-              <h3 class="px-4 py-2 text-xl uppercase">Key Shortcut</h3>
-              <key-shortcut keys="ctrl+alt+x x"></key-shortcut>
-            </div>
-          </article>
-          <article class="m-auto flex w-screen flex-1 flex-wrap space-y-2 space-x-2">
-            <div class="flex flex-col">
-              <h3 class="px-4 py-2 text-xl uppercase">Preview Iframe</h3>
-              <preview-iframe
-                width="1000"
-                height="600"
-                allow
-                show-zoom-level
-                sandbox
-                show-controls="true"
-                src="https://google.com.ar"
-              ></preview-iframe>
-            </div>
-          </article>
-        </section>
+        </nav>
       </div>
+    </header>
+
+    <main id="main-content" role="main">
+      <h1 class="visually-hidden">Custom Web Components Catalog</h1>
+      <component-catalog></component-catalog>
     </main>
-    <footer class="flex h-24 items-center justify-around px-8 py-4"></footer>
+
+    <footer role="contentinfo">
+      <span>Custom Web Components &mdash; built with vanilla Web Components + Vite</span>
+      <span class="footer-links">
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components" target="_blank">MDN</a>
+        <a href="https://vite.dev" target="_blank">Vite</a>
+      </span>
+    </footer>
   </body>
 </html>
