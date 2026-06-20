@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview",
-    "deploy": "pnpm build && gh-pages -d dist -b gh-pages"
+    "build:lib": "node scripts/build-lib.mjs",
+    "preview": "vite preview --outDir dist-site",
+    "deploy": "pnpm build && gh-pages -d dist-site -b gh-pages"
   },
+  "files": ["dist/lib"],
   "dependencies": {
     "@tailwindcss/vite": "4.3.1",
     "highlight.js": "^11.11.1",

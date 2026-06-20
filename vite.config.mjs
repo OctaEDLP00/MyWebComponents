@@ -5,5 +5,8 @@ import { componentCatalogPlugin } from './plugins/component-catalog.mjs'
 
 export default defineConfig({
 	base: '/MyWebComponents/',
+	build: {
+		outDir: 'dist-site',
+	},
 	plugins: [tailwindcss(), componentCatalogPlugin()]
 })
