@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors",
+    "christian-kohler.npm-intellisense",
+    "wix.vscode-import-cost",
+    "pflannery.vscode-versionlens",
+    "editorconfig.editorconfig",
+    "usernamehw.errorlens",
+    "christian-kohler.path-intellisense",
+    "tobermory.es6-string-html",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
