@@ -15,7 +15,12 @@ execSync('vite build --config vite.lib.config.mjs', { cwd: root, stdio: 'inherit
 // Step 2 — generate package.json for the lib output directory
 const rootPkg = JSON.parse(readFileSync(join(root, 'package.json'), 'utf-8'))
 
-// Discover all generated .js files to build exports map
+/**
+ * Discover all generated .js files to build exports map
+ * @param {string} dir
+ * @param {string} [prefix='']
+ * @returns {Array<Record<string, string>>}
+ */
 function discoverOutputs(dir, prefix = '') {
   const entries = []
   const items = readdirSync(dir, { withFileTypes: true })
@@ -31,6 +36,7 @@ function discoverOutputs(dir, prefix = '') {
 }
 
 const entries = discoverOutputs(outDir)
+/** @type {Record<string, string>} */
 const exportsMap = {}
 for (const { name, path } of entries) {
   exportsMap[`./${name}`] = path

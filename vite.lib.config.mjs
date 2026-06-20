@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'vite'
-import { readdirSync, statSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
+import { readdirSync, statSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -9,16 +9,15 @@ const srcDir = join(__dirname, 'src/components')
 const outDir = join(__dirname, 'dist/lib')
 
 const EXCLUDE = new Set(['global.d.ts', 'index.ts'])
-const EXCLUDE_NAMES = new Set([
-  'component-catalog',
-  'catalog-card',
-  'catalog-modal',
-])
+const EXCLUDE_NAMES = new Set(['component-catalog', 'catalog-card', 'catalog-modal'])
 
 /**
  * Recursively discover PascalCase .ts files and convert to kebab-case entry names.
+ * @param {string} dir
+ * @returns {Record<string, string>}
  */
 function discoverComponents(dir) {
+  /** @type {Record<string, string>} */
   const entries = {}
   const items = readdirSync(dir)
   for (const item of items) {
