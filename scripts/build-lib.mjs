@@ -44,7 +44,7 @@ for (const { name, path } of entries) {
 exportsMap['./package.json'] = './package.json'
 
 const libPkg = {
-  name: '@wc/components',
+  name: '@shadow-ui/components',
   type: 'module',
   version: rootPkg.version || '0.0.0',
   private: false,
