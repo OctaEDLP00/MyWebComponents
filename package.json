@@ -8,9 +8,18 @@
     "build": "tsc && vite build",
     "build:lib": "node scripts/build-lib.mjs",
     "preview": "vite preview --outDir dist-site",
-    "deploy": "pnpm build && gh-pages -d dist-site -b gh-pages"
+    "deploy": "pnpm build && gh-pages -d dist-site -b gh-pages",
+    "prepare": "husky",
+    "commit": "git cz"
   },
-  "files": ["dist/lib"],
+  "files": [
+    "dist/lib"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
   "dependencies": {
     "@tailwindcss/vite": "4.3.1",
     "highlight.js": "^11.11.1",
@@ -19,17 +28,23 @@
     "vite": "8.0.16"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/cz-commitlint": "^21.0.2",
     "@eslint/js": "10.0.1",
     "@stylistic/eslint-plugin": "5.10.0",
     "@types/eslint": "9.6.1",
     "@types/node": "26.0.0",
     "@typescript-eslint/eslint-plugin": "8.61.1",
     "@typescript-eslint/parser": "8.61.1",
+    "commitizen": "^4.3.2",
     "eslint": "10.5.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
     "gh-pages": "^6.3.0",
     "globals": "17.6.0",
+    "husky": "^9.1.7",
+    "inquirer": "^9.3.8",
     "prettier": "3.8.4",
     "prettier-plugin-tailwindcss": "0.8.0",
     "typescript-eslint": "8.61.1"

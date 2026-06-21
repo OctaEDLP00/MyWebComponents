@@ -57,6 +57,10 @@ header nav a:hover {
 main {
   flex: 1;
 }
+component-catalog {
+  display: block;
+  min-height: 70vh;
+}
 footer {
   display: flex;
   justify-content: space-between;
