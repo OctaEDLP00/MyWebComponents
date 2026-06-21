@@ -602,7 +602,11 @@ export class ComponentCatalogElement extends HTMLElement {
   }
 
   private renderMain() {
-    if (!this.main || !this.shadowRoot) return
+    if (!this.shadowRoot) return
+    if (!this.main) {
+      this.main = this.shadowRoot.querySelector('.main')
+      if (!this.main) return
+    }
 
     const category = this.navItems[this.selectedIndex]
     if (!category) return
