@@ -2705,7 +2705,7 @@ export default defineComponent({
           `).join(``)}
         </ul>
       </div>
-    `}renderMain(){if(!this.main||!this.shadowRoot)return;let e=this.navItems[this.selectedIndex];if(!e)return;let t=this.searchQuery,n=t?e.components.filter(e=>e.tagName.toLowerCase().includes(t)||e.className.toLowerCase().includes(t)):e.components;this.main.innerHTML=`
+    `}renderMain(){if(!this.shadowRoot||!this.main&&(this.main=this.shadowRoot.querySelector(`.main`),!this.main))return;let e=this.navItems[this.selectedIndex];if(!e)return;let t=this.searchQuery,n=t?e.components.filter(e=>e.tagName.toLowerCase().includes(t)||e.className.toLowerCase().includes(t)):e.components;this.main.innerHTML=`
       <div class="main-header">
         <h2 class="main-title">${e.label}</h2>
         <p class="main-desc">${n.length} component${n.length===1?``:`s`}</p>
