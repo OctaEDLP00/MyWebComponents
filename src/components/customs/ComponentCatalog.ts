@@ -320,7 +320,7 @@ export class ComponentCatalogElement extends HTMLElement {
     this.render()
     this.setupElements()
     this.setupEvents()
-    this.selectCategory(0)
+    requestAnimationFrame(() => this.selectCategory(0))
   }
 
   private setupElements() {
